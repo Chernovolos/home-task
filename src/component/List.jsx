@@ -1,19 +1,17 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
+import ListElement from "./ListElement";
 
 class List extends React.Component {
 
     render() {
         let { cars } = this.props;
         return(
-            <ListGroup>
+            <ListGroup className="mb-4">
                 {
                     cars.map(({id, model, color}) => {
                         return (
-                        <ListGroup.Item key={id}>
-                            <span className="text-uppercase font-weight-bold">model: </span>{model},
-                            <span className="text-uppercase font-weight-bold"> color: </span>{color};
-                        </ListGroup.Item>
+                            <ListElement key={id} model={model} color={color}/>
                         )
                     })
                 }
